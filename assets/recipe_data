@@ -1,0 +1,362 @@
+{
+  "recipes": [
+    {
+      "name": "Paneer Butter Masala",
+      "cuisine": "Indian",
+      "short_description": "A rich, creamy curry made from paneer cubes simmered in a tomato-butter gravy.",
+      "ingredients": [
+        "200g paneer (cubed)",
+        "2 tbsp butter",
+        "2 onions (finely chopped)",
+        "2 tomatoes (pureed)",
+        "1 tbsp ginger-garlic paste",
+        "10 cashews (soaked and blended)",
+        "1/2 cup cream",
+        "1 tsp red chili powder",
+        "1/2 tsp garam masala",
+        "Salt to taste"
+      ],
+      "cooking_time": "30 minutes",
+      "servings": "2–3",
+      "recipe_steps": [
+        "Heat butter in a pan and sauté onions until golden.",
+        "Add tomato puree, red chili powder, and cook till oil separates.",
+        "Mix in cashew paste and simmer for 5 minutes.",
+        "Add paneer cubes and cream, cook for 2 more minutes.",
+        "Garnish with coriander and serve with naan or rice."
+      ],
+      "image_url": "assets/images/Paneer-butter-masala-recipe.jpg",
+      "creator": "Chef Arjun Mehta",
+      "nutrients": {
+        "Calories": { "value": 380, "unit": "kcal" },
+        "Carbs": { "value": 22, "unit": "gram" },
+        "Protein": { "value": 14, "unit": "gram" },
+        "Calcium": { "value": 210, "unit": "mgram" }
+      },
+      "color": "0xFFEAA13B",
+      "isFavorite": false
+    },
+    {
+      "name": "Veg Biryani",
+      "cuisine": "Indian",
+      "short_description": "A fragrant rice dish cooked with spices, saffron, and mixed vegetables.",
+      "ingredients": [
+        "1 cup basmati rice",
+        "1 cup mixed vegetables",
+        "1 large onion (sliced)",
+        "1/2 cup yogurt",
+        "2 tbsp biryani masala",
+        "A few saffron strands soaked in milk",
+        "2 tbsp ghee",
+        "Salt to taste"
+      ],
+      "cooking_time": "45 minutes",
+      "servings": "3–4",
+      "recipe_steps": [
+        "Soak basmati rice for 30 minutes and parboil it.",
+        "Sauté onions, ginger-garlic paste, and mixed vegetables.",
+        "Add biryani masala, yogurt, and layer with rice.",
+        "Add saffron milk, cover, and cook on low flame for 15 minutes.",
+        "Serve hot with raita."
+      ],
+      "image_url": "assets/images/VegBiryani4.jpg",
+      "creator": "Chef Neha Kapoor",
+      "nutrients": {
+        "Calories": { "value": 290, "unit": "kcal" },
+        "Carbs": { "value": 45, "unit": "gram" },
+        "Protein": { "value": 7, "unit": "gram" },
+        "Calcium": { "value": 120, "unit": "mgram" }
+      },
+      "color": "0xFFFB7900",
+      "isFavorite": false
+    },
+    {
+      "name": "Masala Dosa",
+      "cuisine": "South Indian",
+      "short_description": "Crispy rice crepe stuffed with spiced potato filling, served with chutney and sambar.",
+      "ingredients": [
+        "2 cups dosa batter",
+        "2 potatoes (boiled and mashed)",
+        "1 onion (chopped)",
+        "1 tsp mustard seeds",
+        "1 sprig curry leaves",
+        "1/2 tsp turmeric powder",
+        "Oil for cooking",
+        "Salt to taste"
+      ],
+      "cooking_time": "25 minutes",
+      "servings": "1–2",
+      "recipe_steps": [
+        "Ferment rice and urad dal batter overnight.",
+        "Spread a thin dosa on a hot tawa.",
+        "Prepare potato filling with mustard seeds, curry leaves, and turmeric.",
+        "Place filling inside the dosa and fold.",
+        "Serve with coconut chutney and sambar."
+      ],
+      "image_url": "assets/images/Masala-Dosa-L1.webp",
+      "creator": "Chef Priya Menon",
+      "nutrients": {
+        "Calories": { "value": 320, "unit": "kcal" },
+        "Carbs": { "value": 40, "unit": "gram" },
+        "Protein": { "value": 9, "unit": "gram" },
+        "Calcium": { "value": 180, "unit": "mgram" }
+      },
+      "color": "0xFFECC21A",
+      "isFavorite": false
+    },
+    {
+      "name": "Chole Bhature",
+      "cuisine": "Punjabi",
+      "short_description": "A spicy chickpea curry paired with deep-fried, fluffy bread called bhature.",
+      "ingredients": [
+        "1 cup chickpeas (soaked overnight)",
+        "2 onions (chopped)",
+        "2 tomatoes (chopped)",
+        "2 cups flour",
+        "1/2 cup curd",
+        "1 tsp cumin seeds",
+        "1 tbsp chole masala",
+        "Oil for frying",
+        "Salt to taste"
+      ],
+      "cooking_time": "50 minutes",
+      "servings": "3–4",
+      "recipe_steps": [
+        "Soak chickpeas overnight and pressure cook them.",
+        "Sauté onions, tomatoes, and spices for the masala.",
+        "Add chickpeas and simmer till thick.",
+        "Prepare bhature dough and deep fry till golden.",
+        "Serve together with onion rings and pickle."
+      ],
+      "image_url": "assets/images/BEEFCHOLE-H1.webp",
+      "creator": "Chef Rishi Anand",
+      "nutrients": {
+        "Calories": { "value": 450, "unit": "kcal" },
+        "Carbs": { "value": 60, "unit": "gram" },
+        "Protein": { "value": 12, "unit": "gram" },
+        "Calcium": { "value": 160, "unit": "mgram" }
+      },
+      "color": "0xFFDCBB4F",
+      "isFavorite": false
+    },
+    {
+      "name": "Chocolate Brownie",
+      "cuisine": "American",
+      "short_description": "Fudgy and decadent chocolate dessert with a crisp top and soft center.",
+      "ingredients": [
+        "200g dark chocolate",
+        "100g butter",
+        "1 cup sugar",
+        "2 eggs",
+        "1/2 cup flour",
+        "2 tbsp cocoa powder",
+        "1 tsp vanilla essence"
+      ],
+      "cooking_time": "35 minutes",
+      "servings": "4",
+      "recipe_steps": [
+        "Melt dark chocolate and butter together.",
+        "Add sugar and eggs, whisk until fluffy.",
+        "Mix in flour and cocoa powder.",
+        "Pour batter into a tray and bake at 180°C for 25 minutes.",
+        "Cool, slice, and serve with ice cream."
+      ],
+      "image_url": "assets/images/chocolate-brownie.png",
+      "creator": "Chef Kavya Rao",
+      "nutrients": {
+        "Calories": { "value": 410, "unit": "kcal" },
+        "Carbs": { "value": 55, "unit": "gram" },
+        "Protein": { "value": 5, "unit": "gram" },
+        "Calcium": { "value": 90, "unit": "mgram" }
+      },
+      "color": "0xFF766649",
+      "isFavorite": false
+    },
+    {
+      "name": "Margherita Pizza",
+      "cuisine": "Italian",
+      "short_description": "Classic pizza topped with tomato sauce, mozzarella cheese, and fresh basil.",
+      "ingredients": [
+        "1 pizza base",
+        "1/2 cup tomato sauce",
+        "100g mozzarella cheese",
+        "Fresh basil leaves",
+        "1 tbsp olive oil"
+      ],
+      "cooking_time": "30 minutes",
+      "servings": "2–3",
+      "recipe_steps": [
+        "Prepare pizza dough and let it rise for 1 hour.",
+        "Spread tomato sauce evenly over the base.",
+        "Top with mozzarella and basil leaves.",
+        "Bake at 220°C for 12–15 minutes.",
+        "Drizzle olive oil and serve hot."
+      ],
+      "image_url": "assets/images/margarita-pizza.webp",
+      "creator": "Chef Marco Rossi",
+      "nutrients": {
+        "Calories": { "value": 300, "unit": "kcal" },
+        "Carbs": { "value": 33, "unit": "gram" },
+        "Protein": { "value": 12, "unit": "gram" },
+        "Calcium": { "value": 200, "unit": "mgram" }
+      },
+      "color": "0xFFD94921",
+      "isFavorite": false
+    },
+    {
+      "name": "Caesar Salad",
+      "cuisine": "American",
+      "short_description": "A refreshing salad with romaine lettuce, croutons, parmesan, and Caesar dressing.",
+      "ingredients": [
+        "2 cups romaine lettuce",
+        "1/2 cup croutons",
+        "1/4 cup parmesan cheese",
+        "2 tbsp olive oil",
+        "1 tbsp lemon juice",
+        "1 clove garlic (minced)",
+        "1 tsp anchovy paste (optional)"
+      ],
+      "cooking_time": "15 minutes",
+      "servings": "2",
+      "recipe_steps": [
+        "Chop lettuce and prepare croutons.",
+        "Mix olive oil, garlic, lemon juice, and anchovy paste for dressing.",
+        "Combine lettuce, croutons, and dressing.",
+        "Sprinkle parmesan cheese and black pepper.",
+        "Serve chilled."
+      ],
+      "image_url": "assets/images/caesar-salad.jpg",
+      "creator": "Chef Sarah Carter",
+      "nutrients": {
+        "Calories": { "value": 210, "unit": "kcal" },
+        "Carbs": { "value": 12, "unit": "gram" },
+        "Protein": { "value": 8, "unit": "gram" },
+        "Calcium": { "value": 150, "unit": "mgram" }
+      },
+      "color": "0xFF1C771F",
+      "isFavorite": false
+    },
+    {
+      "name": "Sushi Rolls",
+      "cuisine": "Japanese",
+      "short_description": "Vinegared rice rolled with seaweed, fresh vegetables, and fish or tofu.",
+      "ingredients": [
+        "1 cup sushi rice",
+        "2 tbsp rice vinegar",
+        "1 tbsp sugar",
+        "1/2 tsp salt",
+        "4 nori sheets",
+        "Fillings (cucumber, avocado, fish/tofu)"
+      ],
+      "cooking_time": "40 minutes",
+      "servings": "2–3",
+      "recipe_steps": [
+        "Cook sushi rice with rice vinegar, sugar, and salt.",
+        "Place nori sheet on bamboo mat and spread rice evenly.",
+        "Add fillings like cucumber, avocado, and fish/tofu.",
+        "Roll tightly and slice into pieces.",
+        "Serve with soy sauce and wasabi."
+      ],
+      "image_url": "assets/images/sushi-rolls.jpg",
+      "creator": "Chef Kenji Tanaka",
+      "nutrients": {
+        "Calories": { "value": 280, "unit": "kcal" },
+        "Carbs": { "value": 42, "unit": "gram" },
+        "Protein": { "value": 9, "unit": "gram" },
+        "Calcium": { "value": 70, "unit": "mgram" }
+      },
+      "color": "0xFFFFFFFF",
+      "isFavorite": false
+    },
+    {
+      "name": "Tacos",
+      "cuisine": "Mexican",
+      "short_description": "Crispy or soft tortillas filled with spicy meat or veggies and tangy toppings.",
+      "ingredients": [
+        "6 tortillas",
+        "200g minced meat or veggies",
+        "1 tomato (chopped)",
+        "1/2 cup lettuce (shredded)",
+        "1/4 cup cheese",
+        "Salsa or sour cream"
+      ],
+      "cooking_time": "25 minutes",
+      "servings": "2–3",
+      "recipe_steps": [
+        "Cook minced meat or veggies with taco seasoning.",
+        "Warm tortillas on a pan.",
+        "Add filling, lettuce, tomato, and cheese.",
+        "Top with salsa or sour cream.",
+        "Fold and serve immediately."
+      ],
+      "image_url": "assets/images/chicken-tacos-11.webp",
+      "creator": "Chef Diego Ramirez",
+      "nutrients": {
+        "Calories": { "value": 330, "unit": "kcal" },
+        "Carbs": { "value": 35, "unit": "gram" },
+        "Protein": { "value": 14, "unit": "gram" },
+        "Calcium": { "value": 130, "unit": "mgram" }
+      },
+      "color": "0xFFEAA13B",
+      "isFavorite": false
+    },
+    {
+      "name": "Falafel Wrap",
+      "cuisine": "Middle Eastern",
+      "short_description": "A healthy wrap made with spiced chickpea patties, veggies, and tahini sauce.",
+      "ingredients": [
+        "1 cup chickpeas (soaked overnight)",
+        "2 cloves garlic",
+        "1 onion (chopped)",
+        "Fresh parsley",
+        "1 tsp cumin powder",
+        "1 tsp coriander powder",
+        "Pita bread",
+        "Tahini sauce",
+        "Lettuce, tomato, cucumber"
+      ],
+      "cooking_time": "30 minutes",
+      "servings": "2",
+      "recipe_steps": [
+        "Blend soaked chickpeas with herbs, garlic, and spices.",
+        "Form small balls and deep fry till golden.",
+        "Spread hummus or tahini on pita bread.",
+        "Add falafel, lettuce, tomato, and cucumber.",
+        "Wrap and serve warm."
+      ],
+      "image_url": "assets/images/Falafel-wraps-05-720x540.jpg",
+      "creator": "Chef Leila Haddad",
+      "nutrients": {
+        "Calories": { "value": 270, "unit": "kcal" },
+        "Carbs": { "value": 38, "unit": "gram" },
+        "Protein": { "value": 10, "unit": "gram" },
+        "Calcium": { "value": 140, "unit": "mgram" }
+      },
+      "color": "0xFFC6A868",
+      "isFavorite": false
+    }
+  ],
+  "items": [
+    "Paneer Butter Masala",
+    "Veg Biryani",
+    "Masala Dosa",
+    "Chole Bhature",
+    "Chocolate Brownie",
+    "Margherita Pizza",
+    "Caesar Salad",
+    "Sushi Rolls",
+    "Tacos",
+    "Falafel Wrap"
+  ],
+  "cuisine": [
+    "All",
+    "Indian",
+    "South Indian",
+    "Punjabi",
+    "American",
+    "Italian",
+    "Japanese",
+    "Mexican",
+    "Middle Eastern"
+  ]
+}
