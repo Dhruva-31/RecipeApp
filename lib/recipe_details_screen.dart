@@ -70,34 +70,37 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                               Positioned(
                                 bottom: -30,
                                 right: 10,
-                                child: Container(
-                                  width: 180,
-                                  height: 180,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(color: Colors.green),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black.withOpacity(0.25),
-                                        blurRadius: 10,
-                                        offset: Offset(5, 5),
+                                child: Hero(
+                                  tag: 'grid',
+                                  child: Container(
+                                    width: 180,
+                                    height: 180,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: Colors.green),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.25),
+                                          blurRadius: 10,
+                                          offset: Offset(5, 5),
+                                        ),
+                                        BoxShadow(
+                                          color: const Color.fromARGB(
+                                            255,
+                                            183,
+                                            69,
+                                            69,
+                                          ).withOpacity(0.5),
+                                          blurRadius: 5,
+                                          offset: Offset(-5, -5),
+                                        ),
+                                      ],
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          widget.recipe['image_url'],
+                                        ),
+                                        fit: BoxFit.cover,
                                       ),
-                                      BoxShadow(
-                                        color: const Color.fromARGB(
-                                          255,
-                                          183,
-                                          69,
-                                          69,
-                                        ).withOpacity(0.5),
-                                        blurRadius: 5,
-                                        offset: Offset(-5, -5),
-                                      ),
-                                    ],
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        widget.recipe['image_url'],
-                                      ),
-                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
@@ -330,7 +333,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            width: 180,
+                            width: 195,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 elevation: 4,
@@ -356,7 +359,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                             ),
                           ),
                           SizedBox(
-                            width: 180,
+                            width: 195,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 elevation: 4,

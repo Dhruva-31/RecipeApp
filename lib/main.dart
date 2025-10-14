@@ -55,7 +55,7 @@ class RecipeApp extends StatelessWidget {
           bodyLarge: TextStyle(
             fontFamily: "Inter",
             fontSize: 18,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),

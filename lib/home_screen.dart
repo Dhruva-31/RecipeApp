@@ -188,97 +188,100 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         )
-                      : GridView.builder(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10,
-                                childAspectRatio: 3 / 5,
-                              ),
-                          itemCount: recipeProvider.filteredRecipes.length,
-                          itemBuilder: (context, index) {
-                            final recipe =
-                                recipeProvider.filteredRecipes[index];
-                            Color cardColor;
-                            if (index % 4 == 0 || index % 4 == 3) {
-                              cardColor = const Color(0xFFFFF9BD);
-                            } else {
-                              cardColor = const Color(0xFFFFD6BA);
-                            }
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        RecipeDetailsScreen(recipe: recipe),
-                                  ),
-                                );
-                              },
-                              child: Card(
-                                elevation: 10,
-                                shape: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide.none,
+                      : Hero(
+                          tag: 'grid',
+                          child: GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  childAspectRatio: 3 / 5,
                                 ),
-                                color: cardColor,
-                                child: Stack(
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    Center(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                          bottom: 200.0,
-                                        ),
-                                        child: Text(
-                                          recipe["name"],
-                                          style: Theme.of(
-                                            context,
-                                          ).textTheme.titleSmall,
-                                        ),
-                                      ),
+                            itemCount: recipeProvider.filteredRecipes.length,
+                            itemBuilder: (context, index) {
+                              final recipe =
+                                  recipeProvider.filteredRecipes[index];
+                              Color cardColor;
+                              if (index % 4 == 0 || index % 4 == 3) {
+                                cardColor = const Color(0xFFFFF9BD);
+                              } else {
+                                cardColor = const Color(0xFFFFD6BA);
+                              }
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          RecipeDetailsScreen(recipe: recipe),
                                     ),
-                                    Positioned(
-                                      top: 120,
-                                      left: 5,
-                                      child: Container(
-                                        width: 160,
-                                        height: 160,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.black.withOpacity(
-                                                0.25,
-                                              ),
-                                              blurRadius: 10,
-                                              offset: Offset(5, 5),
-                                            ),
-                                            BoxShadow(
-                                              color: const Color.fromARGB(
-                                                255,
-                                                183,
-                                                69,
-                                                69,
-                                              ).withOpacity(0.5),
-                                              blurRadius: 5,
-                                              offset: Offset(-5, -5),
-                                            ),
-                                          ],
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                              recipe['image_url'],
-                                            ),
-                                            fit: BoxFit.cover,
+                                  );
+                                },
+                                child: Card(
+                                  elevation: 10,
+                                  shape: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  color: cardColor,
+                                  child: Stack(
+                                    clipBehavior: Clip.none,
+                                    children: [
+                                      Center(
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            bottom: 200.0,
+                                          ),
+                                          child: Text(
+                                            recipe["name"],
+                                            style: Theme.of(
+                                              context,
+                                            ).textTheme.titleSmall,
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Positioned(
+                                        top: 120,
+                                        left: 5,
+                                        child: Container(
+                                          width: 160,
+                                          height: 160,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(
+                                                  0.25,
+                                                ),
+                                                blurRadius: 10,
+                                                offset: Offset(5, 5),
+                                              ),
+                                              BoxShadow(
+                                                color: const Color.fromARGB(
+                                                  255,
+                                                  183,
+                                                  69,
+                                                  69,
+                                                ).withOpacity(0.5),
+                                                blurRadius: 5,
+                                                offset: Offset(-5, -5),
+                                              ),
+                                            ],
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                recipe['image_url'],
+                                              ),
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
                 ),
               ],
