@@ -15,30 +15,32 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     final recipeProvider = Provider.of<RecipeProvider>(context);
     if (!recipeProvider.isLoaded) {
       return const Center(child: CircularProgressIndicator());
     }
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40),
-        child: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            iconSize: 30,
-            onPressed: () {
-              Navigator.pop(context);
-            },
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(height * 0.05),
+          child: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              iconSize: width * 0.07,
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
           ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
         ),
-      ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: SingleChildScrollView(
-        child: SizedBox(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(width * 0.02),
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,43 +48,49 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(width: 90),
+                      SizedBox(width: width * 0.21),
                       Card(
                         elevation: 4,
                         color: Theme.of(context).colorScheme.primary,
                         shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(width * 0.05),
                           borderSide: BorderSide.none,
                         ),
                         child: SizedBox(
-                          width: 200,
-                          height: 200,
+                          width: width * 0.5,
+                          height: height * 0.22,
                           child: Stack(
                             clipBehavior: Clip.none,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: EdgeInsets.all(width * 0.04),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [SizedBox(height: 60)],
+                                  children: [SizedBox(height: height * 0.07)],
                                 ),
                               ),
                               Positioned(
-                                bottom: -30,
-                                right: 10,
+                                bottom: -height * 0.04,
+                                right: width * 0.045,
                                 child: Hero(
                                   tag: 'grid',
                                   child: Container(
-                                    width: 180,
-                                    height: 180,
+                                    width: width * 0.4,
+                                    height: width * 0.4,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      border: Border.all(color: Colors.green),
+                                      border: Border.all(
+                                        color: Colors.green,
+                                        width: width * 0.005,
+                                      ),
                                       boxShadow: [
                                         BoxShadow(
                                           color: Colors.black.withOpacity(0.25),
-                                          blurRadius: 10,
-                                          offset: Offset(5, 5),
+                                          blurRadius: width * 0.02,
+                                          offset: Offset(
+                                            width * 0.015,
+                                            width * 0.015,
+                                          ),
                                         ),
                                         BoxShadow(
                                           color: const Color.fromARGB(
@@ -91,8 +99,11 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                                             69,
                                             69,
                                           ).withOpacity(0.5),
-                                          blurRadius: 5,
-                                          offset: Offset(-5, -5),
+                                          blurRadius: width * 0.01,
+                                          offset: Offset(
+                                            -width * 0.015,
+                                            -width * 0.015,
+                                          ),
                                         ),
                                       ],
                                       image: DecorationImage(
@@ -109,7 +120,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 40),
+                      SizedBox(width: width * 0.08),
                       IconButton(
                         onPressed: () {
                           recipeProvider.toggleFavorite(widget.recipe["name"]);
@@ -122,22 +133,22 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                         color: widget.recipe['isFavorite']
                             ? Colors.red
                             : const Color.fromARGB(255, 0, 0, 0),
-                        iconSize: 30,
+                        iconSize: width * 0.08,
                       ),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: height * 0.05),
                   Center(
                     child: Card(
                       elevation: 8,
                       color: Theme.of(context).primaryColor,
                       shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(width * 0.08),
                         borderSide: BorderSide.none,
                       ),
                       child: SizedBox(
-                        width: 350,
-                        height: 60,
+                        width: width * 0.85,
+                        height: height * 0.08,
                         child: Center(
                           child: Text(
                             widget.recipe["creator"],
@@ -148,19 +159,22 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 25),
+                    padding: EdgeInsets.only(
+                      left: width * 0.05,
+                      top: height * 0.03,
+                    ),
                     child: Text(
                       widget.recipe["name"],
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 18.0),
+                    padding: EdgeInsets.only(left: width * 0.045),
                     child: Text(
                       widget.recipe["cuisine"],
                       style: TextStyle(
                         color: const Color.fromARGB(255, 46, 44, 44),
-                        fontSize: 18,
+                        fontSize: width * 0.045,
                         fontFamily: "Inter",
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w500,
@@ -168,9 +182,9 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: EdgeInsets.all(width * 0.045),
                     child: SizedBox(
-                      width: 520,
+                      width: width * 0.9,
                       child: Text(
                         widget.recipe["short_description"],
                         style: Theme.of(context).textTheme.bodyLarge,
@@ -178,20 +192,20 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                    padding: EdgeInsets.only(left: width * 0.05),
                     child: Text(
                       'Nutritions',
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: height * 0.02),
                   GridView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
+                      crossAxisCount: width > 600 ? 3 : 2,
+                      crossAxisSpacing: width * 0.03,
+                      mainAxisSpacing: width * 0.03,
                       childAspectRatio: 3 / 1,
                     ),
                     itemCount: widget.recipe["nutrients"].length,
@@ -205,83 +219,75 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                       return Card(
                         elevation: 8,
                         shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(width * 0.08),
                           borderSide: BorderSide.none,
                         ),
                         color: Theme.of(context).colorScheme.onError,
-                        child: SizedBox(
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 8),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 40,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      color: const Color.fromARGB(
-                                        255,
-                                        152,
-                                        222,
-                                        222,
-                                      ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        nutrientValue.toString(),
-                                        style: Theme.of(
-                                          context,
-                                        ).textTheme.titleSmall,
-                                      ),
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.only(left: width * 0.02),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: width * 0.1,
+                                  height: width * 0.1,
+                                  decoration: const BoxDecoration(
+                                    color: Color.fromARGB(255, 152, 222, 222),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      nutrientValue.toString(),
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.titleSmall,
                                     ),
                                   ),
-                                  SizedBox(width: 10),
-                                  Column(
-                                    children: [
-                                      SizedBox(height: 2),
-                                      Text(
-                                        nutrientKey,
-                                        style: Theme.of(
-                                          context,
-                                        ).textTheme.titleMedium,
-                                      ),
-                                      SizedBox(height: 2),
-                                      Text(
-                                        nutrientUnit,
-                                        style: Theme.of(
-                                          context,
-                                        ).textTheme.titleSmall,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                ),
+                                SizedBox(width: width * 0.025),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      nutrientKey,
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.titleMedium,
+                                    ),
+                                    Text(
+                                      nutrientUnit,
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.titleSmall,
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       );
                     },
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: height * 0.025),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(width: 45),
                       Card(
                         elevation: 8,
                         color: Theme.of(context).colorScheme.secondary,
                         shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(width * 0.04),
                           borderSide: BorderSide.none,
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10.0,
-                            horizontal: 20,
+                          padding: EdgeInsets.symmetric(
+                            vertical: height * 0.015,
+                            horizontal: width * 0.05,
                           ),
                           child: Column(
                             children: [
-                              Icon(Icons.alarm),
+                              const Icon(Icons.alarm),
                               Text(
                                 "Prep time",
                                 style: Theme.of(context).textTheme.titleSmall,
@@ -294,22 +300,22 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 15),
+                      SizedBox(width: width * 0.04),
                       Card(
                         elevation: 8,
                         color: Theme.of(context).colorScheme.secondary,
                         shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(width * 0.04),
                           borderSide: BorderSide.none,
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10.0,
-                            horizontal: 20,
+                          padding: EdgeInsets.symmetric(
+                            vertical: height * 0.015,
+                            horizontal: width * 0.05,
                           ),
                           child: Column(
                             children: [
-                              Icon(Icons.person),
+                              const Icon(Icons.person),
                               Text(
                                 "Servings",
                                 style: Theme.of(context).textTheme.titleSmall,
@@ -324,23 +330,21 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                       ),
                     ],
                   ),
-
-                  SizedBox(height: 30),
-
+                  SizedBox(height: height * 0.05),
                   Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            width: 195,
+                            width: width * 0.45,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 elevation: 4,
                                 backgroundColor: showIngredients
                                     ? Theme.of(context).colorScheme.error
                                     : Theme.of(context).colorScheme.secondary,
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(30),
                                     bottomLeft: Radius.circular(30),
@@ -359,14 +363,14 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                             ),
                           ),
                           SizedBox(
-                            width: 195,
+                            width: width * 0.45,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 elevation: 4,
                                 backgroundColor: !showIngredients
                                     ? Theme.of(context).colorScheme.error
                                     : Theme.of(context).colorScheme.secondary,
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(30),
                                     bottomRight: Radius.circular(30),
@@ -387,38 +391,28 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                         ],
                       ),
                       AnimatedSwitcher(
-                        duration: Duration(milliseconds: 100),
+                        duration: const Duration(milliseconds: 100),
                         child: showIngredients
                             ? Card(
                                 elevation: 8,
                                 color: Theme.of(context).colorScheme.primary,
                                 child: SizedBox(
                                   width: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(18.0),
-                                        child: SizedBox(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: List.generate(
-                                              widget
-                                                  .recipe["ingredients"]
-                                                  .length,
-                                              (index1) => Text(
-                                                "${index1 + 1}. ${widget.recipe['ingredients'][index1]}",
-                                                style: Theme.of(
-                                                  context,
-                                                ).textTheme.bodyLarge,
-                                              ),
-                                            ),
-                                          ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(width * 0.045),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: List.generate(
+                                        widget.recipe["ingredients"].length,
+                                        (index1) => Text(
+                                          "${index1 + 1}. ${widget.recipe['ingredients'][index1]}",
+                                          style: Theme.of(
+                                            context,
+                                          ).textTheme.bodyLarge,
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               )
@@ -427,31 +421,21 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
                                 color: Theme.of(context).colorScheme.primary,
                                 child: SizedBox(
                                   width: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(18.0),
-                                        child: SizedBox(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: List.generate(
-                                              widget
-                                                  .recipe["recipe_steps"]
-                                                  .length,
-                                              (index1) => Text(
-                                                "${index1 + 1}. ${widget.recipe['recipe_steps'][index1]}",
-                                                style: Theme.of(
-                                                  context,
-                                                ).textTheme.bodyLarge,
-                                              ),
-                                            ),
-                                          ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(width * 0.045),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: List.generate(
+                                        widget.recipe["recipe_steps"].length,
+                                        (index1) => Text(
+                                          "${index1 + 1}. ${widget.recipe['recipe_steps'][index1]}",
+                                          style: Theme.of(
+                                            context,
+                                          ).textTheme.bodyLarge,
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),
